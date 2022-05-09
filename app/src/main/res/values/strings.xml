@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Test App</string>
+    <string name="titleTextView">Title</string>
+    <string name="subtitleTextView">Some description</string>
+    <string name="learnMoreButton">Learn more</string>
+</resources>
