@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,5 +21,16 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("title", title)
             startActivity(intent)
         }
+
+        val dataForAdapter = ArrayList<String>()
+        repeat(15) { index ->
+            dataForAdapter.add("Element $index")
+        }
+
+        val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
+        val simpleAdapter = SimpleAdapter()
+        simpleAdapter.setData(dataForAdapter)
+
+        recyclerView.adapter = simpleAdapter
     }
 }
