@@ -15,7 +15,7 @@ class SimpleAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        (holder as SimpleViewHolder).onBind(data[position])
+        (holder as SimpleViewHolder).onBind(data[position], position)
     }
 
     override fun getItemCount(): Int {
@@ -32,8 +32,15 @@ class SimpleAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     ) {
         val textView: TextView = itemView.findViewById(R.id.textView)
 
-        fun onBind(textToDisplay: String) {
+        fun onBind(textToDisplay: String, position: Int) {
+
+            val color = if (position % 2 == 0) {
+                itemView.context.getColor(R.color.light_gray_background)
+            } else {
+                itemView.context.getColor(R.color.white)
+            }
             textView.text = textToDisplay
+            itemView.setBackgroundColor(color)
         }
     }
 }

@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         val dataForAdapter = ArrayList<String>()
-        repeat(15) { index ->
+        repeat(150) { index ->
             dataForAdapter.add("Element $index")
         }
 
