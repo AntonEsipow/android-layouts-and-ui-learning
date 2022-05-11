@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
 
         val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
         val simpleAdapter = SimpleAdapter()
-        simpleAdapter.setData(dataForAdapter)
+        simpleAdapter.setData(dataForAdapter, "Beautiful view")
 
         recyclerView.adapter = simpleAdapter
     }
